@@ -4,25 +4,38 @@
     "slug": "react-native-prueba",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/image.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "scheme": "reactnative",
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/splash-new.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nazadevv.reactnativeprueba"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/splash-new.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.nazadevv.reactnativeprueba"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "bundler": "metro",
+      "favicon": "./assets/image.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "99a3b013-43ad-4638-aacc-bdc8638a3fe5"
+      }
+    },
+    "owner": "nazadevv",
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
