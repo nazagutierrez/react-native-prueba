@@ -15,21 +15,17 @@ El proyecto usa una cuenta falsa de Strava, por eso estan las credenciales publi
 ## Repositorio y APK
 
 - **Repositorio GitHub**: [Enlace al repositorio](https://github.com/nazagutierrez/react-native-prueba)
-- **APK Android**: [Descargar APK](https://link-a-tu-apk.com)
+- **APK Android**: [Descargar APK](https://expo.dev/accounts/nazadevv/projects/react-native-prueba/builds/4434ceb6-29f9-484a-8c8c-1f1df0d5b482)
 
-## Instalación
+## Pasos para usarlo
 
-1. Clona el repositorio y navega al directorio del proyecto:
-   ```bash
-   git clone https://github.com/nazagutierrez/react-native-prueba
-   cd tu-repositorio
-Instala las dependencias:
-
-npm install
-Inicia la app:
+1. Clona el repositorio
+2. Instala las dependencias
+3. Introducimos las variables necesarias en el .env
+Si queres utilizar la app en el navegador del movil deberas correr el servidor en local (npx expo start / npm start), y desde el celular entrar a la app. 
+Si solo la queres usar con datos falsos se puede sin problemas, solo que no puedes cerrar sesión
 
 
-npm start
 Tecnologías
 React Native y Expo
 Zustand para gestión de estado
