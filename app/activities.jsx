@@ -19,17 +19,18 @@ import { useEffect, useState } from "react";
 
     useEffect(() => {
       if (!month || !year || !activities) {
+        // no filtra cuando no hay parametro de mes y año
         setFilteredActivities(activities)
       }
 
       if (month && year && activities) {
+        // filtra por por parametro de mes y año
         setFilteredActivities(
           activities.filter((activity) => {
             const activityDate = new Date(activity.start_date_local);
             const activityMonth = activityDate.getMonth() + 2;
             const activityYear = activityDate.getFullYear();
-  
-            // Filtrar por mes y año
+
             return activityMonth === parseInt(month) && activityYear === parseInt(year);
           })
         );
@@ -38,6 +39,7 @@ import { useEffect, useState } from "react";
     
   
     const handeDate = (date) => {
+      // formateo simple de la fecha
       const dateObj = new Date(date);
       return `${dateObj.getDate()}/${dateObj.getMonth() + 2}/${dateObj.getFullYear()}`
       

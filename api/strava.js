@@ -1,6 +1,7 @@
 const auth_link = "https://www.strava.com/oauth/token"
 
 export async function Authorize(code) {
+    // autorizamos ussuario con el auth token
     try {
         const response = await fetch(auth_link, {
             method: 'POST',
@@ -23,7 +24,7 @@ export async function Authorize(code) {
 }
 
 export async function getUser(res){
-    console.log("res en getActivites", res)
+    // obtenemos datos del usuario
     const user_link = `https://www.strava.com/api/v3/athlete`
     const data = await fetch(user_link, {
         method: 'GET',
@@ -34,12 +35,11 @@ export async function getUser(res){
         },
     });
     const result = await data.json();
-    console.log(result)
     return result;
 }
 
 export async function getActivities(res){
-    console.log("res en getActivites", res)
+    // obtenemos actividades del usuario y usamos el token que nos da la funcion Authorize() 
     const activities_link = `https://www.strava.com/api/v3/athlete/activities?per_page=30`
     const data = await fetch(activities_link, {
         method: 'GET',
@@ -49,11 +49,11 @@ export async function getActivities(res){
         },
     });
     const result = await data.json();
-    console.log("actividades",result)
     return result;
 }
 
 export async function refreshToken(refreshToken) {
+    // refrescamos token cuando expira
     try {
         const response = await fetch(auth_link, {
             method: "POST",
@@ -73,8 +73,7 @@ export async function refreshToken(refreshToken) {
         }
 
         const data = await response.json();
-        console.log("Token refrescado exitosamente:", data);
-        return data; // Contiene el nuevo access_token, refresh_token, expires_at
+        return data; // nuevo access_token, refresh_token, expires_at
     } catch (error) {
         console.error("Error durante la actualización del token:", error);
         throw error;

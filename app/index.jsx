@@ -12,12 +12,15 @@ export default function Main() {
 
 
   const handleLogout = () => {
+    // borramos data para simular un cierre de sesión
+    // solo funciona en navegador
     setIsFake(false)
     clearAuthData(); // Limpiar datos al cerrar sesión
     router.replace("/");
   };
 
   const handleFakeLogin = () => {
+    // seteamos datos falsos
     setIsFake(true)
     setUser({username: "juancito1", profile: "https://static.thenounproject.com/png/5100711-200.png", firstname: "Juan"});
     setActivities([
@@ -104,6 +107,7 @@ export default function Main() {
               and see all of your activities
             </Text>
           </View>
+          {/* botón para loguearse */}
           <View className="flex-row items-center justify-center gap-10 mt-5">
             <Link
               href={`http://www.strava.com/oauth/authorize?client_id=141564&response_type=code&redirect_uri=http://${ip}/auth&approval_prompt=force&scope=activity:read_all`}

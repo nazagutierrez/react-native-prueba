@@ -6,10 +6,11 @@ import "../global.css";
 
 export default function Auth() {
   const { code, error } = useLocalSearchParams();
-  const { fake ,authData, setAuthData, user, setUser, activities, setActivities } = useUserStore();
+  const { authData, setAuthData, user, setUser, activities, setActivities } = useUserStore();
   const rootNavigationState = useRootNavigationState();
 
   useEffect(() => {
+    // efecto para esperar a que la pantalla cargue y no de error
     if (!rootNavigationState?.key || !error) return;
     router.push("/");
   }, [error, rootNavigationState?.key]);

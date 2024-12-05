@@ -1,11 +1,10 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-// Crea el store de zustand
 const useUserStore = create(
   persist(
     (set) => ({
-      fake: false,
+      fake: false, // estado para saber si es información falsa
       activities: null, // actividades del usuario
       user: null, // datos del usuario
       authData: null, // authData contiene access_token, refresh_token, expires_at
@@ -17,6 +16,7 @@ const useUserStore = create(
     }),
     {
       name: "auth-storage",
+      // persistir infromación entre páginas
       partialize: (state) => ({
         authData: state.authData,
         user: state.user,

@@ -22,6 +22,7 @@ export default function Main() {
     setMonths(lastThreeMonths);
   }, [activities]);
 
+  // si hay meses, calculamos las estadísticas
   useEffect(() => {
     if (months.length > 0 && activities) {
       const allStats = getStats();
@@ -58,6 +59,7 @@ export default function Main() {
   }
 
   function getLastThreeMonths() {
+    // obtenemos los ultimos 3 meses
     const now = new Date();
 
     const formatMonth = (date) => ({
@@ -84,6 +86,7 @@ export default function Main() {
         Selecciona un mes para ver las actividades que realizaste en esa fecha
       </Text>
       <View className="h-24 flex-row gap-3 w-full items-start justify-center px-3">
+        {/* Mapeamos cada mes en un botón */}
         {months.map((month, index) => (
           <Link key={index}  href={`/activities?month=${month.month}&year=${month.year}`}  asChild>
             <Pressable className="active:opacity-70 justify-center bg-neutral-800/90 border-b-2 rounded border-[#af64ab] w-[110] py-3 px-2">

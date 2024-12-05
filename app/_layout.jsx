@@ -1,12 +1,9 @@
 import { Stack } from "expo-router";
-import { Pressable, Text, View, Image } from "react-native";
-import useUserStore from "../store/stravaStore";
+import { View, Image } from "react-native";
 import icon from "../assets/image.png";
 
 
 export default function Layout() {
-  const user = useUserStore((state) => state.user);
-
   return (
       <Stack
         screenOptions={{
