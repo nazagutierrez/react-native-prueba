@@ -2,6 +2,9 @@
 
 Este proyecto es una app para visualizar actividades de Strava y estadísticas mensuales. La autenticación funciona en el navegador, pero en la app móvil redirige al navegador debido a que tuve problemas de tiempo investigando los Deep Linking en Expo. Además, el botón de "Cerrar sesión" no funciona correctamente en la app móvil, pero, en el navegador móvil, con el boton de datos falsos o los reales debería funcionar
 
+# Demo
+https://github.com/user-attachments/assets/47792cce-32d9-4ed7-aa7e-1d27bab8ea60
+
 ## Configuración
 
 Antes de ejecutar, configura el archivo `.env` con tu dirección IP y puerto:
