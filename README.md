@@ -9,7 +9,7 @@ https://github.com/user-attachments/assets/47792cce-32d9-4ed7-aa7e-1d27bab8ea60
 
 Antes de ejecutar, configura el archivo `.env` con tu dirección IP y puerto:
 
-IP_AND_PORT=http://192.168.0.29:8081
+IP_AND_PORT={ip}:{port}
 
 ## Credenciales públicas
 
